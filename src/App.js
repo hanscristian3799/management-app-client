@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import Clients from "./components/Clients";
+import AddClientModal from "./components/AddClientModal";
+import Projects from "./components/Projects";
+
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        clients: {
+          merge(exsiting, incoming) {
+            return incoming;
+          },
+        },
+        projects: {
+          merge(exsiting, incoming) {
+            return incoming;
+          },
+        },
+      },
+    },
+  },
+});
+
+const client = new ApolloClient({
+  uri: "http://localhost:5000/graphql",
+  cache: cache,
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ApolloProvider client={client}>
+        <Header />
+        <div className="container">
+          <Projects />
+          <AddClientModal />
+          <Clients />
+        </div>
+      </ApolloProvider>
+    </>
   );
 }
 
