@@ -64,7 +64,7 @@ const AddClientModal = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="addClientModalLabel">
-                Modal title
+                Add Client
               </h5>
               <button
                 type="button"

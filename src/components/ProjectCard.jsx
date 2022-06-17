@@ -1,6 +1,6 @@
 const ProjectCard = ({ project }) => {
   return (
-    <div className="col-md-6">
+    <div className="col-md-6 my-2">
       <div className="card">
         <div className="card-body">
           <div className="d-flex justify-content-between align-items-center">
