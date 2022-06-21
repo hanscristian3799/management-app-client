@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaList } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_CLIENTS } from "../apollo/queries/clientQueries";
 import { GET_PROJECTS } from "../apollo/queries/projectQueries";
@@ -57,9 +57,9 @@ const AddProjectModal = () => {
             data-bs-toggle="modal"
             data-bs-target="#addProjectModal"
           >
-            <div className="d-flex align-items-center">
-              <FaList className="icon" />
-              <div>New Project</div>
+            <div className="d-flex align-items-center justify-content-between gap-1">
+              <FaPlus className="icon me-0" />
+              <div className="d-none d-md-flex">New Project</div>
             </div>
           </button>
 
@@ -142,13 +142,15 @@ const AddProjectModal = () => {
                         })}
                       </select>
                     </div>
-                    <button
-                      type="submit"
-                      data-bs-dismiss="modal"
-                      className="btn btn-primary"
-                    >
-                      Add Project
-                    </button>
+                    <div className="d-flex justify-content-end">
+                      <button
+                        type="submit"
+                        data-bs-dismiss="modal"
+                        className="btn btn-primary"
+                      >
+                        Add Project
+                      </button>
+                    </div>
                   </form>
                 </div>
               </div>

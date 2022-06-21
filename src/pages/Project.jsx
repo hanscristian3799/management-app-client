@@ -17,12 +17,12 @@ const Project = () => {
   });
 
   if (error) return <p>Something went wrong</p>;
-  if (loading) return <Spinner />;
+  if (loading) return <Spinner height="80vh" />;
 
   return (
     <>
       {!error && !loading && (
-        <div className="mx-auto card p-5 mb-3">
+        <div className="mx-auto card p-2 p-md-5 mb-3">
           <div className="d-flex align-items-center justify-content-between">
             <Link to="/" className="text-dark">
               <FaChevronLeft size="1.5em" />

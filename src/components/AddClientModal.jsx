@@ -47,9 +47,9 @@ const AddClientModal = () => {
         data-bs-toggle="modal"
         data-bs-target="#addClientModal"
       >
-        <div className="d-flex align-items-center">
-          <FaPlus className="icon" />
-          <div>Add Client</div>
+        <div className="d-flex align-items-center justify-content-between gap-1">
+          <FaPlus className="icon me-0" />
+          <div className="d-none d-md-flex">Add Client</div>
         </div>
       </button>
 
@@ -111,13 +111,15 @@ const AddClientModal = () => {
                     onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
-                <button
-                  type="submit"
-                  data-bs-dismiss="modal"
-                  className="btn btn-primary"
-                >
-                  Add Client
-                </button>
+                <div className="d-flex justify-content-end">
+                  <button
+                    type="submit"
+                    data-bs-dismiss="modal"
+                    className="btn btn-primary"
+                  >
+                    Add Client
+                  </button>
+                </div>
               </form>
             </div>
           </div>
