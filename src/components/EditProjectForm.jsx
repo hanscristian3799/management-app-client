@@ -1,12 +1,18 @@
 import { UPDATE_PROJECT } from "../apollo/mutations/projectMutations";
 import { useMutation } from "@apollo/client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GET_PROJECTS } from "../apollo/queries/projectQueries";
+import { projectStatus } from "../helpers/datas/data";
 
 const EditProjectForm = ({ project }) => {
   const [name, setName] = useState(project.name);
   const [description, setDescription] = useState(project.description);
   const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    const statusValue = projectStatus[project.status];
+    setStatus(statusValue);
+  }, [project]);
 
   const [updateProject] = useMutation(UPDATE_PROJECT, {
     variables: {
