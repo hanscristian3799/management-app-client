@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,4 +37,22 @@ code {
 
 .icon {
   margin-right: 5px;
+}
+
+.status-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+}
+
+.project-completed {
+  background: #5cb85c;
+}
+
+.project-notstarted {
+  background: #d9534f;
+}
+
+.project-ongoing {
+  background: #f0ad4e;
 }

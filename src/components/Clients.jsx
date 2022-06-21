@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_CLIENTS } from "../apollo/queries/clientQueries";
+import AddClientModal from "./AddClientModal";
 import ClientRow from "./ClientRow";
 import Spinner from "./Spinner";
 
@@ -11,6 +12,10 @@ const Clients = () => {
 
   return (
     <>
+      <div className="d-flex justify-content-between align-items-center">
+        <h2>Clients</h2>
+        <AddClientModal />
+      </div>
       {!loading && !error && (
         <table className="table table-hover">
           <thead>

@@ -15,7 +15,7 @@ const DeleteProjectButton = ({ projectId }) => {
     refetchQueries: [{ query: GET_PROJECTS }],
   });
   return (
-    <div className="d-flex align-items-center ms-auto mt-3">
+    <div className="d-flex align-items-center ms-auto my-3">
       <button className="btn btn-danger" onClick={deleteProject}>
         <FaTrash className="icon" /> Delete Project
       </button>

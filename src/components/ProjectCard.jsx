@@ -21,7 +21,10 @@ const ProjectCard = ({ project }) => {
                 </strong>
               </p>
             </div>
-            <a href={`/projects/${project.id}`} className="btn btn-primary">
+            <a
+              href={`/projects/${project.id}`}
+              className="btn btn-warning text-light fw-semibold"
+            >
               View
             </a>
           </div>

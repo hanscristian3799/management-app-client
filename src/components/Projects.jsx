@@ -1,5 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_PROJECTS } from "../apollo/queries/projectQueries";
+import AddProjectModal from "./AddProjectModal";
 import ProjectCard from "./ProjectCard";
 import Spinner from "./Spinner";
 
@@ -11,6 +12,10 @@ const Projects = () => {
 
   return (
     <>
+      <div className="d-flex justify-content-between align-items-center">
+        <h2>Projects</h2>
+        <AddProjectModal />
+      </div>
       {data.projects.length > 0 ? (
         <div className="row mb-3">
           {data.projects.map((project) => {

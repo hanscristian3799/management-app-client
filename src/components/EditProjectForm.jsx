@@ -30,6 +30,7 @@ const EditProjectForm = ({ project }) => {
 
   return (
     <div>
+      <h4>Edit Project</h4>
       <form onSubmit={onFormSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -69,7 +70,10 @@ const EditProjectForm = ({ project }) => {
             <option value="completed">Completed</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-warning d-flex ms-auto">
+        <button
+          type="submit"
+          className="btn btn-warning d-flex ms-auto fw-semibold text-light"
+        >
           Edit Project
         </button>
       </form>
